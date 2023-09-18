@@ -106,5 +106,41 @@ footer{
     color: antiquewhite;
     font-style: italic;
     font-size: 18px;
+}
+/* configuraçao pra tablet*/
+@media (max-width:768px){
+    body{
+        padding: 32px 0px 0px 32px;
+    }
 
+    .descricao{
+        flex-grow: 0;
+        padding: 60px;
+        justify-content: flex-start;
+    }
+
+    .descricao p{
+        text-align: center;
+    }
+
+    .social-conteiner{
+        display: none;
+    }
+
+    .trailers{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .trailers img{
+        width: 500px;
+    }
+
+    .trailers a:nth-child(3){
+        display: none;
+    }
+    
+    .footer{
+        display: none;
+}
 }
