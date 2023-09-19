@@ -31,6 +31,10 @@ header a{
     border-bottom: 3px solid transparent;
 }
 
+header i{
+    display: none;
+}
+
 header a:hover{
     border-bottom: 3px solid ;
     color: rgb(86, 190, 221);
@@ -73,6 +77,10 @@ main{
     width: 530px;
     font-size: 1.5rem;
     color: white;
+}
+
+.descricao button{
+    display: none;
 }
 
 .trailers{
@@ -143,4 +151,69 @@ footer{
     .footer{
         display: none;
 }
+}
+/*configuraçao para celular*/
+@media (max-width:480px) {
+    body{
+        background-image: url(./img/background-mobile\ 1.png);
+    }
+
+    header{
+        justify-content: space-between;
+        padding: 0px 38px 0px 20px;
+    }
+
+    header a{
+        border-bottom: none;
+        height: 48px;
+    }
+
+    header a:not(.logo-dc){
+        display: none;
+    }
+
+    header i.fas{
+        display: block;
+        color: #D022ff;
+        font-size: 30px;
+    }
+    .descricao{
+        align-items: center;
+        justify-content: flex-end;
+        height: 100%;
+        padding: 0px;
+        padding-bottom: 40px;
+        gap: 32px;
+    }
+
+    .descricao img{   
+        width: 95vw;
+    }
+
+    .descricao p{
+        display: none;
+    }
+
+    .trailers{
+        display: none;
+    }
+
+    footer{
+        display: none;
+    }
+
+    .descricao a{
+        display: flex;
+        align-items:center ;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: #FFF;
+        border-radius: 50px;
+        border:3.5px solid #22FFFE ;
+        background-color: #D022ff;
+        display: block;
+        outline: none;
+        width: 200px;
+        height: 50px;
+    }
 }
