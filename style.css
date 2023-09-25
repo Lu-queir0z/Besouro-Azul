@@ -4,10 +4,14 @@
     box-sizing: border-box;
 }
 
+html{
+    overflow: hidden;
+}
+
 body{
-    font-family: 'Inter', sans-serif;
+    position: relative;
     font-family: 'Montserrat', sans-serif;
-    height: 100vh;
+    height: 100vH;
     background-image:url(./img/background-desktop\ 1.png) ;
     background-repeat: no-repeat;
     background-size: cover;
@@ -18,6 +22,8 @@ body{
     padding-left: 96px;
     padding-right: 96px;
     padding-bottom: 16px;
+    z-index: -10;
+    overflow: hidden;
 }
 
 a{
@@ -31,8 +37,10 @@ header a{
     border-bottom: 3px solid transparent;
 }
 
-header i{
+header i.fas{
     display: none;
+    color: #D022ff;
+    font-size: 30px;
 }
 
 header a:hover{
@@ -50,6 +58,10 @@ header{
     align-items: center;
     justify-content: center;
     gap: 30px;
+}
+
+header .overlay{
+    display: none;
 }
 
 main{
@@ -117,103 +129,152 @@ footer{
 }
 /* configuraçao pra tablet*/
 @media (max-width:768px){
-    body{
-        padding: 32px 0px 0px 32px;
+body{
+    padding: 32px 0px 0px 32px;
     }
 
-    .descricao{
-        flex-grow: 0;
-        padding: 60px;
-        justify-content: flex-start;
+header i.fa-bars{
+    display: none;
     }
 
-    .descricao p{
+main a.ASSISTA{
+    display: none;
+    }
+
+.descricao{
+    flex-grow: 0;
+    padding: 60px;
+    justify-content: flex-start;
+    }
+
+.descricao p{
         text-align: center;
     }
 
-    .social-conteiner{
-        display: none;
+.social-conteiner{
+    display: none;
     }
 
-    .trailers{
-        flex-direction: column;
-        align-items: center;
+.trailers{
+    flex-direction: column;
+    align-items: center;
     }
 
-    .trailers img{
-        width: 500px;
+.trailers img{
+    width: 500px;
     }
 
-    .trailers a:nth-child(3){
-        display: none;
+.trailers a:nth-child(3){
+    display: none;
     }
     
-    .footer{
-        display: none;
+.footer{
+    display: none;
 }
 }
 /*configuraçao para celular*/
 @media (max-width:480px) {
-    body{
+body{
         background-image: url(./img/background-mobile\ 1.png);
     }
 
-    header{
-        justify-content: space-between;
-        padding: 0px 38px 0px 20px;
+header{
+    justify-content: space-between;
+    padding: 0px 38px 0px 20px;
     }
 
-    header a{
-        border-bottom: none;
-        height: 48px;
+header a{
+    border-bottom: none;
+    height: 48px;
     }
 
-    header a:not(.logo-dc){
-        display: none;
+header a:not(.logo-dc){
+    display: none;
+        }
+
+header i.fa-bars{
+    display: block;
     }
 
-    header i.fas{
-        display: block;
-        color: #D022ff;
-        font-size: 30px;
-    }
-    .descricao{
-        align-items: center;
-        justify-content: flex-end;
-        height: 100%;
-        padding: 0px;
-        padding-bottom: 40px;
-        gap: 32px;
+header.menu i.fa-bars{
+    display: none;
     }
 
-    .descricao img{   
-        width: 95vw;
+header.menu i.fa-bars + .fa-times{
+    display: block;
     }
 
-    .descricao p{
-        display: none;
+header.menu .overlay{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(166,31,210,1) 0%, rgba(34,255,254,1) 100%);
+    z-index: -1;
+    transform: translateX(0%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
     }
 
-    .trailers{
-        display: none;
+header .overlay a{
+    color: #FFF;
+    display: block;
+    font-size: 2rem;
+}
+
+header .menu i.fa-bars ~ .overlay{
+    transform: translateX(100%);
+}
+
+main{
+    z-index: -2;
     }
 
-    footer{
-        display: none;
+main a.ASSISTA{
+    display: block;
     }
 
-    .descricao a{
-        display: flex;
-        align-items:center ;
-        justify-content: center;
-        font-size: 1.2rem;
-        color: #FFF;
-        border-radius: 50px;
-        border:3.5px solid #22FFFE ;
-        background-color: #D022ff;
-        display: block;
-        outline: none;
-        width: 200px;
-        height: 50px;
+.descricao{
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    padding: 0px;
+    padding-bottom: 40px;
+    gap: 32px;
+    }
+
+.descricao img{   
+    width: 95vw;
+    }
+
+.descricao p{
+    display: none;
+    }
+
+.trailers{
+    display: none;
+    }
+
+footer{
+    display: none;
+    }
+
+.descricao a{
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: #FFF;
+    border-radius: 50px;
+    border:3.5px solid #22FFFE ;
+    background-color: #D022ff;
+    display: block;
+    outline: none;
+    width: 200px;
+    height: 50px;
     }
 }

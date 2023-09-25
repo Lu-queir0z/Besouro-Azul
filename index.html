@@ -12,10 +12,11 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Montserrat:ital,wght@1,300&display=swap"
         rel="stylesheet">
     <script src="https://kit.fontawesome.com/324b71f187.js" crossorigin="anonymous"></script>
+    <script src="./main.js" defer></script>
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <a href="#">Home</a>
         <a href="./trailer.html">Trailer</a>
         <a class="logo-dc" href="https://www.dc.com/">
@@ -23,14 +24,21 @@
         </a>
         <a href="./comic.html">Comic</a>
         <a href="./shop.html">Shop</a>
-        <i class="fas fa-bars"></i>
+        <i class="fas fa-bars" id="abrir"></i>
+        <i class="fas fa-times" id="fechar"></i>
+        <div class="overlay">
+            <a href="#">Home</a>
+            <a href="./trailer.html">Trailer</a></a>
+            <a href="./comic.html">Comic</a>
+            <a href="./shop.html">Shop</a>
+        </div>
     </header>
 
     <main>
 
         <div class="filme-conteiner">
             <div class="descricao">
-                <a href="#">ASSISTA O TRAILER</a>
+                <a class="ASSISTA"  href="https://www.youtube.com/watch?v=sqHP-zdvXG8">ASSISTA O TRAILER</a>
                 <img src="./img/logo-besouro-azul 1.png" alt="">
                 <p>
                     Jaime Reyes não é o primeiro Besouro Azul e só pode vencer com a ajuda da familia.
